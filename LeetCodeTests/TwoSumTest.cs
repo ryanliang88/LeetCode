@@ -1,4 +1,4 @@
-using LeetCode;
+using LeetCodeSolutions;
 using Xunit;
 
 namespace LeetCodeTests

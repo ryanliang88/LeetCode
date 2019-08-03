@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace LeetCode
+namespace LeetCodeSolutions
 {
     /**
     * https://leetcode.com/problems/two-sum/
