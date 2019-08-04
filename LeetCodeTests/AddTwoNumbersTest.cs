@@ -20,7 +20,7 @@ namespace LeetCodeTests
         }
     }
 
-    public class AddTwoNumbersData
+    public static class AddTwoNumbersData
     {
         public static readonly int[] l1Data = { 2, 4, 3 };
         public static readonly int[] l2Data = { 5, 6, 4 };

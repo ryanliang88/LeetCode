@@ -4,7 +4,12 @@ using System.Collections.Generic;
 
 namespace LeetCodeSolutions
 {
-    public class AddTwoNumbers
+    /**
+     * https://leetcode.com/problems/add-two-numbers/
+     *
+     */
+
+    public static class AddTwoNumbers
     {
         public static ListNode Solution(ListNode l1, ListNode l2)
         {

@@ -5,6 +5,7 @@ namespace LeetCodeSolutions
 {
     /**
     * https://leetcode.com/problems/two-sum/
+    * Solved
     */
 
     public class TwoSum
