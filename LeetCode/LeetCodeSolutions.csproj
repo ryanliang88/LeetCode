@@ -4,4 +4,8 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeetCodeUtility\LeetCodeUtility.csproj" />
+  </ItemGroup>
 </Project>

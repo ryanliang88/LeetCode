@@ -13,10 +13,10 @@ namespace LeetCodeTests
             // Arrange
 
             // Act
-            ListNode answer = l1 + l2;
+            ListNode actual = l1 + l2;
 
             // Assert
-            Assert.Equal(answer, expected);
+            Assert.True(expected.Equals(actual));
         }
     }
 

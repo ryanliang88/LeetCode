@@ -1,14 +1,44 @@
-﻿namespace LeetCodeSolutions
+﻿using LeetCodeUtility;
+using System;
+using System.Collections.Generic;
+
+namespace LeetCodeSolutions
 {
     public class AddTwoNumbers
     {
         public static ListNode Solution(ListNode l1, ListNode l2)
         {
-            return new ListNode(0);
+            var listNode = new ListNode(0);
+            var p = l1;
+            var q = l2;
+            int carry = 0;
+            var currentNode = listNode;
+
+            while (p != null || q != null)
+            {
+                int top = p?.val ?? 0;
+                int bottom = q?.val ?? 0;
+
+                int sum = carry + top + bottom;
+                carry = sum / 10;
+
+                currentNode.next = new ListNode(sum % 10);
+                currentNode = currentNode.next;
+
+                p = p?.next;
+                q = q?.next;
+            }
+
+            if (carry != 0)
+            {
+                currentNode.next = new ListNode(carry);
+            }
+
+            return listNode.next;
         }
     }
 
-    public class ListNode
+    public class ListNode : ValueObject
     {
         public int val;
 
@@ -27,6 +57,12 @@
                 currentListNode.next = new ListNode(data[i]);
                 currentListNode = currentListNode.next;
             }
+        }
+
+        protected override IEnumerable<object> GetAtomicValues()
+        {
+            yield return val;
+            yield return next;
         }
 
         public static ListNode operator +(ListNode l1, ListNode l2)
