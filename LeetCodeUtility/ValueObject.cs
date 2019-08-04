@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCodeUtility
@@ -13,16 +12,16 @@ namespace LeetCodeUtility
     {
         protected static bool EqualOperator(ValueObject left, ValueObject right)
         {
-            if (ReferenceEquals(left, null) ^ ReferenceEquals(right, null))
+            if (left is null ^ right is null)
             {
                 return false;
             }
-            return ReferenceEquals(left, null) || left.Equals(right);
+            return left?.Equals(right) != false;
         }
 
         protected static bool NotEqualOperator(ValueObject left, ValueObject right)
         {
-            return !(EqualOperator(left, right));
+            return !EqualOperator(left, right);
         }
 
         protected abstract IEnumerable<object> GetAtomicValues();
@@ -39,14 +38,13 @@ namespace LeetCodeUtility
             IEnumerator<object> otherValues = other.GetAtomicValues().GetEnumerator();
             while (thisValues.MoveNext() && otherValues.MoveNext())
             {
-                if (ReferenceEquals(thisValues.Current, null) ^
-                    ReferenceEquals(otherValues.Current, null))
+                if (thisValues.Current is null
+                    ^ otherValues.Current is null)
                 {
                     return false;
                 }
 
-                if (thisValues.Current != null &&
-                    !thisValues.Current.Equals(otherValues.Current))
+                if (thisValues.Current?.Equals(otherValues.Current) == false)
                 {
                     return false;
                 }
@@ -57,7 +55,7 @@ namespace LeetCodeUtility
         public override int GetHashCode()
         {
             return GetAtomicValues()
-             .Select(x => x != null ? x.GetHashCode() : 0)
+             .Select(x => x?.GetHashCode() ?? 0)
              .Aggregate((x, y) => x ^ y);
         }
 

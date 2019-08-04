@@ -9,9 +9,4 @@ namespace LeetCodeSolutions
         {
         }
     }
-
-    public static class Formatter
-    {
-        public static string Format(int[] nums) => $"[{string.Join(", ", nums)}]";
-    }
 }
