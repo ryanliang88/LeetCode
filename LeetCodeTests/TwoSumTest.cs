@@ -1,4 +1,4 @@
-using LeetCode;
+using LeetCodeSolutions;
 using Xunit;
 
 namespace LeetCodeTests
@@ -13,10 +13,10 @@ namespace LeetCodeTests
             var twoSum = new TwoSum();
 
             // Act
-            var answer = twoSum.Solution(nums, target);
+            var actual = twoSum.Solution(nums, target);
 
             // Assert
-            Assert.Equal(answer, expected);
+            Assert.Equal(expected, actual);
         }
     }
 }

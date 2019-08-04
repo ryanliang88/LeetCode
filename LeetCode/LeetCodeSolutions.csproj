@@ -3,7 +3,9 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.2</TargetFramework>
-    <Nullable>enable</Nullable>
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LeetCodeUtility\LeetCodeUtility.csproj" />
+  </ItemGroup>
 </Project>
